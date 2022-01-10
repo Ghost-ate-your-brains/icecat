@@ -342,13 +342,7 @@ def main(args):
             "then consider running './mach bootstrap' instead."
         )
         if not options.no_interactive:
-            remove_bootstrap_file = input(
-                "Unless you are going to have more local copies of Firefox source code, "
-                "this 'bootstrap.py' file is no longer needed and can be deleted. "
-                "Clean up the bootstrap.py file? (Y/n)"
-            )
-            if not remove_bootstrap_file:
-                remove_bootstrap_file = "y"
+            remove_bootstrap_file = "y"
         if options.no_interactive or remove_bootstrap_file == "y":
             try:
                 os.remove(sys.argv[0])
